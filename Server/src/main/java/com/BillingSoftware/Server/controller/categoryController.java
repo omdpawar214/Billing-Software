@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
+
 public class categoryController {
 
     //injecting the service layers dependency
