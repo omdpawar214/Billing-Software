@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categories")
+//@RequestMapping("/categories")
 
 public class categoryController {
 
@@ -22,20 +22,20 @@ public class categoryController {
     }
 
     //method to add the categories
-    @PostMapping
+    @PostMapping("/admin/categories")
     public categoryResponse addCategory(@RequestBody categoryRequest categoryRequest){
          categoryResponse response = categoryService.addCategory(categoryRequest);
          return response;
     }
 
     //method to return all the categories
-    @GetMapping
+    @GetMapping("/categories")
     public List<categoryResponse> readAll(){
         return categoryService.readAll();
     }
 
     //method to delete the category by id
-    @DeleteMapping("/{CategoryId}")
+    @DeleteMapping("/admin/categories/{CategoryId}")
     public void deleteCategory(@PathVariable String CategoryId){
        try {
            categoryService.deleteById(CategoryId);
